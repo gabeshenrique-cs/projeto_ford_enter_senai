@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volt Drive - Mobilidade sem Limites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO SUPERIOR -->
+  <header>
+    <div class="logo" onclick="navigateTo('home')">
+      ⚡ VOLT <span>DRIVE</span>
+    </div>
+
+    <nav>
+      <a id="nav-home" class="active" onclick="navigateTo('home')">Início</a>
+      <a id="nav-produto" onclick="navigateTo('produto')">Modelos</a>
+      <a id="nav-contactos" onclick="navigateTo('contactos')">Contactos</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- CLASSE PROFILE COM O TEU NOME -->
+      <div class="profile">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Gabriel Henrique" class="profile-avatar">
+        <div class="profile-info">
+          <span class="profile-greeting">Olá, Gabriel Henrique</span>
+          <span class="profile-status">● Cliente VIP</span>
+        </div>
+      </div>
+
+      <button class="btn-theme-toggle" onclick="toggleDarkMode()" id="themeBtn">
+        🌙 Modo Escuro
+      </button>
+      <div class="cart-pill" onclick="navigateTo('carrinho')">
+        🛒 Carrinho <span class="badge">2</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. PÁGINA INICIAL (HOME) -->
+    <section id="page-home" class="page-section active">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>MOBILIDADE SEM LIMITES.</h1>
+          <p>Compre ou alugue o carro ideal com a Volt Drive. Tecnologia, segurança e liberdade para o seu dia a dia.</p>
+          <div class="hero-buttons">
+            <button class="btn-primary" onclick="navigateTo('produto')">Ver modelos &rarr;</button>
+            <button class="btn-secondary-white">Saiba mais &rarr;</button>
+          </div>
+        </div>
+
+        <!-- 3 CARROS DESTACADOS -->
+        <div class="hero-cars-row">
+          <div class="hero-car-card">
+            <img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=500&q=80" alt="Ford Mustang Hybrid">
+            <h4>Ford Mustang Hybrid</h4>
+            <p>Performance e eficiência.</p>
+            <button class="btn-outline-blue" onclick="navigateTo('produto')">Ver detalhes &rarr;</button>
+          </div>
+          <div class="hero-car-card">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" alt="Ford Mustang Mach-E">
+            <h4>Ford Mustang Mach-E</h4>
+            <p>100% Elétrico.</p>
+            <button class="btn-outline-blue" onclick="navigateTo('produto')">Ver detalhes &rarr;</button>
+          </div>
+          <div class="hero-car-card">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=500&q=80" alt="Hyundai Ioniq 6">
+            <h4>Hyundai Ioniq 6</h4>
+            <p>Design e tecnologia.</p>
+            <button class="btn-outline-blue" onclick="navigateTo('produto')">Ver detalhes &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BARRA DE PESQUISA -->
+      <div class="filter-bar">
+        <div class="search-box">
+          <input type="text" placeholder="Pesquisar modelos, marcas...">
+        </div>
+        <button class="filter-btn active">Todos</button>
+        <button class="filter-btn">Compra</button>
+        <button class="filter-btn">Aluguel</button>
+        <button class="filter-btn">Marca ▾</button>
+      </div>
+
+      <!-- GRELHA DOS CARROS -->
+      <div class="car-grid">
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=500&q=80" alt="Mustang Hybrid">
+          <h3>Ford Mustang Hybrid</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 420.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 620/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" alt="Mach-E">
+          <h3>Ford Mustang Mach-E</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 380.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 550/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=500&q=80" alt="Ioniq 6">
+          <h3>Hyundai Ioniq 6</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 320.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 480/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=500&q=80" alt="Corolla">
+          <h3>Toyota Corolla</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 250.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 350/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=500&q=80" alt="Jeep Compass">
+          <h3>Jeep Compass</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 180.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 290/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=500&q=80" alt="T-Cross">
+          <h3>Volkswagen T-Cross</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 220.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 270/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=500&q=80" alt="BMW Série 3">
+          <h3>BMW Série 3</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 300.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 450/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+
+        <div class="car-card">
+          <span class="fav-heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80" alt="Hyundai Creta">
+          <h3>Hyundai Creta</h3>
+          <div class="price-tag-row">
+            <div><span>Compra</span><strong>R$ 190.000</strong></div>
+            <div><span>Aluguel</span><strong>R$ 260/dia</strong></div>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;" onclick="navigateTo('produto')">RESERVE</button>
+        </div>
+      </div>
+
+      <!-- NOVIDADES -->
+      <div class="new-section">
+        <h2 style="font-size: 1.8rem; font-weight:800; margin-bottom: 1.5rem;">O que tem de novo?</h2>
+        <div class="new-grid">
+          <div>
+            <h3 style="font-size:1.5rem; font-weight:800;">Ford Mustang Mach-E</h3>
+            <span class="pill-green" style="margin: 0.8rem 0;">⚡ 100% Elétrico</span>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Design inovador, autonomia de até 540 km e tecnologia de última geração.</p>
+            <button class="btn-primary" onclick="navigateTo('produto')">Ver detalhes &rarr;</button>
+          </div>
+          <div>
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" alt="Ford Mach-E" style="width:100%; border-radius: var(--radius-md);">
+          </div>
+        </div>
+
+        <div class="tech-features">
+          <div class="tech-item"><div class="tech-icon">🔋</div> Autonomia até 540 km</div>
+          <div class="tech-item"><div class="tech-icon">⚡</div> Carregamento rápido</div>
+          <div class="tech-item"><div class="tech-icon">🛡️</div> Tecnologia Ford Co-Pilot360</div>
+          <div class="tech-item"><div class="tech-icon">🌱</div> Zero emissões mais economia.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. DETALHES DO PRODUTO -->
+    <section id="page-produto" class="page-section">
+      <div style="font-size:0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Início > Ford > <strong>Mustang Hybrid</strong>
+      </div>
+
+      <div class="product-layout">
+        <div>
+          <div class="main-product-img">
+            <span class="brand-badge">Ford</span>
+            <img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=800&q=80" alt="Mustang Hybrid">
+          </div>
+          <div class="product-gallery-thumbs">
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=300&q=80"></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=300&q=80"></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=300&q=80"></div>
+            <div class="thumb"><img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=300&q=80"></div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h3 style="font-size:1.2rem; font-weight:800; margin-bottom: 0.5rem;">Performance e eficiência em um só carro.</h3>
+            <p style="font-size:0.9rem; color: var(--text-muted);">O Ford Mustang Hybrid combina o icónico design do Mustang com a eficiência da tecnologia híbrida recarregável, oferecendo potência, economia e uma experiência única de condução.</p>
+
+            <table class="specs-table">
+              <tr><td>Marca</td><td>Ford</td></tr>
+              <tr><td>Modelo</td><td>Mustang Hybrid</td></tr>
+              <tr><td>Ano</td><td>2026</td></tr>
+              <tr><td>Motor</td><td>2.3 EcoBoost Híbrido</td></tr>
+              <tr><td>Potência</td><td>480 cv</td></tr>
+              <tr><td>Transmissão</td><td>Automática de 10 marchas</td></tr>
+              <tr><td>Tração</td><td>Traseira</td></tr>
+              <tr><td>Autonomia (modo elétrico)</td><td>até 70 km</td></tr>
+              <tr><td>Consumo médio</td><td>18,5 km/l (híbrido)</td></tr>
+              <tr><td>Porta-malas</td><td>382 litros</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <span class="pill-green">🌱 HÍBRIDO</span>
+          <h1 style="font-size: 2rem; font-weight:800; margin-bottom: 1rem;">Ford Mustang Hybrid</h1>
+
+          <div class="price-tag-row" style="padding: 12px 16px;">
+            <div><span>Compra</span><strong style="font-size: 1.1rem;">R$ 420.000</strong></div>
+            <div><span>Aluguel</span><strong style="font-size: 1.1rem;">R$ 620/dia</strong></div>
+          </div>
+
+          <button class="btn-primary" style="width:100%; justify-content:center; padding: 1rem; margin-bottom: 0.8rem;" onclick="navigateTo('carrinho')">Adicionar ao carrinho</button>
+          <button class="btn-outline-blue" style="width:100%; padding: 0.9rem;" onclick="navigateTo('carrinho')">Reservar agora</button>
+
+          <div class="logistics-info">
+            <div>🚚 <strong>Entrega ao Domicílio:</strong> até 7 dias úteis.</div>
+            <div>🏢 <strong>Levantamento em Loja:</strong> até 3 dias úteis.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CARRINHO DE COMPRAS -->
+    <section id="page-carrinho" class="page-section">
+      <h1 style="font-size:1.8rem; font-weight:800; margin-bottom: 1.5rem;">Seu Carrinho</h1>
+
+      <div class="cart-layout">
+        <div>
+          <div class="cart-card-item">
+            <img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=300&q=80" alt="Mustang">
+            <div style="flex:1;">
+              <h3 style="font-size:1rem; font-weight:800;">Ford Mustang Hybrid</h3>
+              <p style="font-size:0.8rem; color: var(--text-muted);">R$ 620/dia</p>
+              <p style="font-size:0.8rem; color: var(--text-muted);">Período: 3 dias (10/10/2026 - 13/10/2026)</p>
+            </div>
+            <div class="quantity-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <div style="text-align:right;">
+              <span style="font-size: 1.1rem; font-weight:800; cursor:pointer;">🗑️</span>
+            </div>
+          </div>
+
+          <div class="cart-card-item">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=300&q=80" alt="Ioniq 6">
+            <div style="flex:1;">
+              <h3 style="font-size:1rem; font-weight:800;">Hyundai Ioniq 6</h3>
+              <p style="font-size:0.8rem; color: var(--text-muted);">R$ 320.000</p>
+              <p style="font-size:0.8rem; color: var(--text-muted);">Quantidade: 1</p>
+            </div>
+            <div class="quantity-counter">
+              <button>-</button>
+              <span>1</span>
+              <button>+</button>
+            </div>
+            <div style="text-align:right;">
+              <span style="font-size: 1.1rem; font-weight:800; cursor:pointer;">🗑</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-summary-box">
+          <h3 style="font-size:1.2rem; font-weight:800; margin-bottom: 1rem;">Resumo do Pedido</h3>
+          
+          <div style="display:flex; justify-content:space-between; margin-bottom: 0.6rem; font-size:0.9rem;">
+            <span>Subtotal (Aluguel)</span>
+            <strong>R$ 1.860,00</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom: 0.6rem; font-size:0.9rem;">
+            <span>Subtotal (Compra)</span>
+            <strong>R$ 320.000,00</strong>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom: 1rem; font-size:0.9rem;">
+            <span>Entrega ao Domicílio</span>
+            <strong style="color: var(--green-tag);">Grátis</strong>
+          </div>
+
+          <hr style="border:none; border-top: 1px solid var(--border-color); margin: 1rem 0;">
+
+          <div style="display:flex; justify-content:space-between; margin-bottom: 1.5rem; font-size:1.2rem;">
+            <span>Total</span>
+            <strong style="color: var(--primary-blue);">R$ 321.860,00</strong>
+          </div>
+
+          <button class="btn-primary" style="width:100%; justify-content:center; padding: 0.9rem; margin-bottom: 0.6rem;">Finalizar Compra</button>
+          <button class="btn-outline-blue" style="width:100%; padding: 0.8rem;" onclick="navigateTo('home')">&lt; Continuar Comprando</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CONTACTOS -->
+    <section id="page-contactos" class="page-section">
+      <div class="contact-layout">
+        <div>
+          <h1 style="font-size:2rem; font-weight:800; margin-bottom: 0.5rem;">Fale com a Volt Drive</h1>
+          <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">Estamos prontos para te ajudar. Entre em contacto conosco através dos canais abaixo ou preencha o formulário.</p>
+
+          <div class="contact-info-list">
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <strong>Telefone</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">+55 (11) 9XXXX-XXXX<br>Segunda a Sexta, 8h às 20h</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div>
+                <strong>E-mail</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">contacto@voltdrive.com<br>Resposta em até 24h</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <strong>Endereço</strong>
+                <p style="font-size:0.85rem; color: var(--text-muted);">Av. das Nações Unidas, 12.345<br>São Paulo - SP</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-placeholder">
+            <div class="map-pin">📍 VOLT DRIVE São Paulo - SP</div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="form-group">
+            <label>Nome completo</label>
+            <input type="text" placeholder="Digite seu nome">
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="text" placeholder="(11) 9XXXX-XXXX">
+          </div>
+          <div class="form-group">
+            <label>Assunto</label>
+            <select>
+              <option>Selecione</option>
+              <option>Comprar Carro</option>
+              <option>Alugar Carro</option>
+              <option>Suporte</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea rows="4" placeholder="Digite sua mensagem..."></textarea>
+          </div>
+          <button class="btn-primary" style="width:100%; justify-content:center;">Enviar Mensagem</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="footer-content">
+      <div class="logo">⚡ VOLT <span>DRIVE</span></div>
+      <div class="footer-links">
+        <a onclick="navigateTo('home')">Início</a>
+        <a onclick="navigateTo('produto')">Modelos</a>
+        <a onclick="navigateTo('contactos')">Contactos</a>
+        <a href="#">FAQ</a>
+        <a href="#">Sobre Nós</a>
+      </div>
+      <div class="social-icons">
+        📷 👤 🎵 🎬
+      </div>
+      <div class="copyright">
+        © 2026 Volt Drive. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT DE NAVEGAÇÃO E MODO ESCURO -->
+  <script>
+    function navigateTo(pageId) {
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      document.getElementById('page-' + pageId).classList.add('active');
+      
+      const activeNav = document.getElementById('nav-' + pageId);
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleDarkMode() {
+      const body = document.body;
+      const themeBtn = document.getElementById('themeBtn');
+
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        themeBtn.innerHTML = '☀️ Modo Claro';
+      } else {
+        themeBtn.innerHTML = '🌙 Modo Escuro';
+      }
+    }
+  </script>
+</body>
+</html>
